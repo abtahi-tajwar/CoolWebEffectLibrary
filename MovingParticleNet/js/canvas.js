@@ -5,8 +5,8 @@ const containerOffset = {
 }
 const container_height = container.getBoundingClientRect().height;
 const container_width = container.getBoundingClientRect().width;
-container.innerHTML += '<canvas id="carnival-circular-motion-effect-canvas"></canvas>'
-const canvas = document.getElementById('carnival-circular-motion-effect-canvas')
+container.innerHTML += '<canvas id="carnival-moving-particle-effect-canvas"></canvas>'
+const canvas = document.getElementById('carnival-moving-particle-effect-canvas')
 const c = canvas.getContext('2d')
 
 
