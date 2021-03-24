@@ -1,4 +1,8 @@
 const container = document.querySelector('.carnival-circular-motion-effect')
+const containerOffset = {
+  left: container.offsetLeft,
+  top: container.offsetTop
+}
 const container_height = container.getBoundingClientRect().height;
 const container_width = container.getBoundingClientRect().width;
 container.innerHTML += '<canvas id="carnival-circular-motion-effect-canvas"></canvas>'
@@ -39,11 +43,26 @@ const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66']
 
 // Event Listeners
 addEventListener('mousemove', (event) => {
-  mouse.x = event.clientX
-  mouse.y = event.clientY
+  let mouseOnCanvas = false;
+  if(
+      event.clientX >= containerOffset.left && event.clientX <= containerOffset.left + container_width
+      && event.clientY >= containerOffset.top && event.clientY <= containerOffset.top + container_height
+    ) {
+      mouseOnCanvas = true;
+    }
+
+    console.log(mouseOnCanvas)
+  if(mouseOnCanvas) {
+    mouse.x = event.clientX - containerOffset.left;
+    mouse.y = event.clientY - containerOffset.top;
+  } else {
+    mouse.x = container_width / 2;
+    mouse.y = container_height / 2;
+  }
+
 })
 
-addEventListener('resize', () => {
+canvas.addEventListener('resize', () => {
   const container_height = container.getBoundingClientRect().height;
   const container_width = container.getBoundingClientRect().width;
   canvas.width = container_height
