@@ -44,8 +44,10 @@ addEventListener('mousemove', (event) => {
 })
 
 addEventListener('resize', () => {
-  canvas.width = innerWidth/2
-  canvas.height = innerHeight/2
+  const container_height = container.getBoundingClientRect().height;
+  const container_width = container.getBoundingClientRect().width;
+  canvas.width = container_height
+  canvas.height = container_width
 })
 
 // Objects
@@ -83,7 +85,6 @@ class Particle {
       x: this.x,
       y: this.y
     }
-    console.log(this.speed, this.motionRadius, this.radius)
     this.angle += this.speed;
     this.mouseLocation.x += (mouse.x - this.mouseLocation.x) * 0.05
     this.mouseLocation.y += (mouse.y - this.mouseLocation.y) * 0.05
