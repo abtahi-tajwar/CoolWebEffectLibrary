@@ -1,4 +1,4 @@
-const container = document.querySelector('.carnival-circular-motion-effect')
+const container = document.querySelector('.carnival-moving-particle-effect')
 const containerOffset = {
   left: container.offsetLeft,
   top: container.offsetTop
