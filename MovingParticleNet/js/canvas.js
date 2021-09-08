@@ -102,7 +102,7 @@ class Particle {
     
     //Detecting mouse collision and pushing away
     const distanceFromMouse = Math.pow((Math.pow((this.x - mouse.x),2) + Math.pow((this.y - mouse.y), 2)), 0.5)
-    if(distanceFromMouse < 50 + this.radius) {
+    if(distanceFromMouse < 100 + this.radius) {
       if(mouse.x < this.x && this.x < canvas.width - this.radius*10) {
         this.x += 10
       }

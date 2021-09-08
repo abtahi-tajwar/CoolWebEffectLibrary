@@ -35,8 +35,8 @@ function distance(x1, y1, x2, y2) {
 
 
 const mouse = {
-  x: innerWidth ,
-  y: innerHeight
+  x: innerWidth/2 ,
+  y: innerHeight/2
 }
 
 const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66']
@@ -65,8 +65,8 @@ addEventListener('mousemove', (event) => {
 canvas.addEventListener('resize', () => {
   const container_height = container.getBoundingClientRect().height;
   const container_width = container.getBoundingClientRect().width;
-  canvas.width = container_height
-  canvas.height = container_width
+  canvas.width = container_width
+  canvas.height = container_height
 })
 
 // Objects
